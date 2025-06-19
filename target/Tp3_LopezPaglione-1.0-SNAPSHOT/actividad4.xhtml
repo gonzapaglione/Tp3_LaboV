@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                template="./templates/layout.xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:f="jakarta.faces.core">
+
+    <ui:define name="top">
+        <h1>Actividad 4: Registro de turnos</h1>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <h:outputLabel>Ingrese el apellido: </h:outputLabel>
+            <h:inputText id="apellido" value="#{pacienteAct4.apellido}" required="true"/>
+            <br/>
+            <h:outputLabel>Ingrese el nombre: </h:outputLabel>
+            <h:inputText id="nombre" value="#{pacienteAct4.nombre}" required="true"/>
+            <br/>
+            <h:outputLabel>Seleccione el medico: </h:outputLabel>
+            <h:selectOneMenu id="seleccionMedico" value="#{pacienteAct4.medicoSeleccionado}" required="true">
+                <f:selectItem itemLabel="-- Seleccione --" itemValue="#{null}" />
+                <f:selectItems value="#{medicoAct4.listaMedicos}" var="medico"
+                               itemLabel="#{medico.nombre} #{medico.apellido}"
+                               itemValue="#{medico}" />
+            </h:selectOneMenu>
+
+            <br/>
+            <h:outputLabel>Ingrese la fecha del turno: </h:outputLabel>
+            <h:inputText id="turno" value="#{pacienteAct4.turno}" f:placeholder="aaaa-mm-dd hh-mm" required="true"/>
+            <br/>
+            <h:commandButton value="Registrar turno" action="#{pacienteAct4.registrarTurno()}"/>
+
+        </h:form>
+    </ui:define>
+
+    <ui:define name="bottom">
+        <h3>Lopez Paglione Gonzalo</h3>   
+    </ui:define>
+
+</ui:composition>

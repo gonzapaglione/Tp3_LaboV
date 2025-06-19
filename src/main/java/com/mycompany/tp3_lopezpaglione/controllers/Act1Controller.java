@@ -51,7 +51,7 @@ public class Act1Controller {
     }
 
     public String irAMostrar() {
-        return "mostrar.xhtml";
+        return "mostrarAct1.xhtml";
     }
 
     public int getEdad() {

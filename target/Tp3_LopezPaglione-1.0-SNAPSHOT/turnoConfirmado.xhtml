@@ -6,20 +6,29 @@
                 xmlns:h="jakarta.faces.html">
 
     <ui:define name="top">
-        <h1>Actividades de la 1 a la 9.</h1>
+        <h1>Actividad 4</h1>
     </ui:define>
 
     <ui:define name="content">
+        <h2>Turno confirmado</h2>
         <h:form>
-            <a href="actividad1.xhtml">Actividad 1</a><br/>
-            <a href="actividad2.xhtml">Actividad 2</a><br/>
-            <a href="actividad3.xhtml">Actividad 3</a><br/>
-            <a href="actividad4.xhtml">Actividad 4</a><br/>
+           
+            <h:outputText value="Datos del turno"/>
+            <br/>
+            <h:outputText value="Apellido: #{pacienteAct4.apellido}"/>
+            <br/>
+            <h:outputText value="Nombre: #{pacienteAct4.nombre}"/>
+            <br/>
+            <h:outputText value="Medico: #{medicoAct4.nombre}"/>
+            <br/>
+            <h:outputText value="Fecha del turno: #{pacienteAct4.turno}"/>
+            <br/>
+
         </h:form>
     </ui:define>
 
     <ui:define name="bottom">
-        <h3>Lopez Paglione Gonzalo</h3>
+        <h3>Lopez Paglione Gonzalo</h3>  
     </ui:define>
 
 </ui:composition>
