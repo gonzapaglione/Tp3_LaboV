@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                template="./templates/layout.xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:f="jakarta.faces.core">
+
+    <ui:define name="top">
+        <h1>Actividad 3: Calculadora de pesos a dolares</h1>
+    </ui:define>
+
+    <ui:define name="content">
+        <h:form>
+            <h:outputText value="Precio dolar hoy: #{actividad3.dolar}"/>
+            <br/>
+            <h:outputLabel>Ingrese la cantidad de pesos:</h:outputLabel>
+            <h:inputText id="pesos" value="#{actividad3.pesos}" required="true">
+                <f:validateDoubleRange minimum="1" maximum="20000"/>
+            </h:inputText>
+            <br/>
+            <h:commandButton value="Calcular" action="#{actividad3.calcularTotal()}"/>
+            <br/>
+            <h:outputText value="Total: #{actividad3.total}"/>
+
+        </h:form>
+    </ui:define>
+
+    <ui:define name="bottom">
+        <h3>Lopez Paglione Gonzalo</h3>
+    </ui:define>
+
+</ui:composition>

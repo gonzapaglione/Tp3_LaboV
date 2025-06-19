@@ -2,27 +2,34 @@
 <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="jakarta.faces.facelets"
-                template="./layout.xhtml"
+                template="./templates/layout.xhtml"
                 xmlns:h="jakarta.faces.html">
 
     <ui:define name="top">
-        <h2>Indice masa corporal</h2>
+        <h1>Actividad 2: Indice masa corporal</h1>
     </ui:define>
 
     <ui:define name="content">
         <h:form>
             <h:outputLabel>Ingrese su Peso (kg):</h:outputLabel>
-            <h:inputText id="peso" value=""/>
+            <h:inputText id="peso" value="#{actividad2.peso}"/>
+            <br/>
 
             <h:outputLabel>Ingrese su altura</h:outputLabel>
-            <h:inputText id="altura" value=""/>
+            <h:inputText id="altura" value="#{actividad2.altura}"/>
+            <br/>
+
+            <h:commandButton value="Calcular IMC" action="#{actividad2.calcularImc()}" />
+            <br/>
+            <h:outputText value="Su imc es: #{actividad2.imc}"/>
+            <br/>
+            <h:outputText value="Clasificacion: #{actividad2.imcMensaje}"/>
             
-            <h:commandButton value="Calcular IMC" action="#{imcBean.calcular}" />
         </h:form>
     </ui:define>
 
     <ui:define name="bottom">
-        bottom
+        <h3>Lopez Paglione Gonzalo</h3>
     </ui:define>
 
 </ui:composition>

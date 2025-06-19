@@ -1,31 +1,36 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="jakarta.faces.html"
-      xmlns:f="jakarta.faces.core"
-      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
-    <!-- La linea de arriba la saque de internet, para poder poner un placeholder -->
-    
-    <h:head>
-        <title>Ingreso de Usuario</title>
-    </h:head>
-    <h:body>
-        <h1>Actividad 1</h1>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="jakarta.faces.facelets"
+                template="./templates/layout.xhtml"
+                xmlns:h="jakarta.faces.html"
+                xmlns:pt="jakarta.faces.passthrough"
+                xmlns:f="jakarta.faces.core">
+
+    <ui:define name="top">
+        <h1>Actividad 1:</h1>
+    </ui:define>
+
+    <ui:define name="content">
         <h:form>
             <h:outputLabel for="txtApellido" value="Apellido"/><br/>
-            <h:inputText id="txtApellido" pt:placeholder="Juan" value="#{persona1.apellido}"/><br/>
+            <h:inputText id="txtApellido" pt:placeholder="Juan" value="#{actividad1.apellido}"/><br/>
 
             <h:outputLabel for="txtNombre" value="Nombre"/><br/>
-            <h:inputText id="txtNombre" pt:placeholder="Perez" value="#{persona1.nombre}"/><br/>
+            <h:inputText id="txtNombre" pt:placeholder="Perez" value="#{actividad1.nombre}"/><br/>
 
             <h:outputLabel for="txtFecha" value="Fecha de nacimiento"/><br/>
-            <h:inputText id="txtFecha" pt:placeholder="aaaa-mm-dd" value="#{persona1.fechaNacimiento}">
+            <h:inputText id="txtFecha" pt:placeholder="aaaa-mm-dd" value="#{actividad1.fechaNacimiento}">
                 <f:convertDateTime pattern="yyyy-MM-dd" />
             </h:inputText>
             <br/> 
 
-            <h:commandButton value="Cargar" action="#{persona1.irAMostrar()}" />
+            <h:commandButton value="Cargar" action="#{actividad1.irAMostrar()}" />
         </h:form>
+    </ui:define>
 
-    </h:body>
-</html>
+    <ui:define name="bottom">
+        <h3>Lopez Paglione Gonzalo</h3>
+    </ui:define>
+
+</ui:composition>

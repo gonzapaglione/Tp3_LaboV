@@ -7,15 +7,15 @@ import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
 
-@Named(value = "persona1")
+@Named(value = "actividad1")
 @RequestScoped
-public class PersAct1Controller {
+public class Act1Controller {
 
     private String nombre;
     private String apellido;
     private Date fechaNacimiento;
 
-    public PersAct1Controller() {
+    public Act1Controller() {
     }
 
     public String getNombre() {
@@ -45,7 +45,7 @@ public class PersAct1Controller {
     /*
     Aqui tuve un problema y es que jsf usa Date y no LocalDate, entonces busque en internet como convertir un Date a LocalDate.
     Referencia: https://stackoverflow.com/questions/21242110/convert-java-util-date-to-java-time-localdate
-     */
+    */
     public LocalDate dateToLocalDate(Date fecha) {
         return fecha.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
     }
