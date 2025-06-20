@@ -5,6 +5,7 @@ com\mycompany\tp3_lopezpaglione\entities\Medicos.class
 com\mycompany\tp3_lopezpaglione\controllers\Act1Controller.class
 com\mycompany\tp3_lopezpaglione\resources\JakartaEE10Resource.class
 com\mycompany\tp3_lopezpaglione\controllers\MedicoController.class
+com\mycompany\tp3_lopezpaglione\repositorios\RepositorioMedicos.class
 com\mycompany\tp3_lopezpaglione\controllers\Act3Controller.class
 com\mycompany\tp3_lopezpaglione\entities\ProducesEntityManager.class
 com\mycompany\tp3_lopezpaglione\controllers\PacienteController.class
